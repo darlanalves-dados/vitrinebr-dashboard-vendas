@@ -2,8 +2,7 @@
 
 Projeto de portfólio que simula as vendas de um varejo com canais online e loja física. O objetivo é mostrar o fluxo completo de análise: do banco de dados até o painel de indicadores.
 
-![Dashboard VitrineBR - Visão Geral]<img width="1021" height="756" alt="image" src="https://github.com/user-attachments/assets/92d9c860-0664-44f7-9053-e24918551729" />
-
+<img width="1021" height="756" alt="Dashboard VitrineBR - Visão Geral" src="https://github.com/user-attachments/assets/92d9c860-0664-44f7-9053-e24918551729" />
 
 ## Tecnologias
 
@@ -31,8 +30,6 @@ Projeto de portfólio que simula as vendas de um varejo com canais online e loja
 | Arquivo | Conteúdo |
 |---|---|
 | `medidas_dax.md` | Todas as medidas DAX do projeto |
-| `banco_e_views.sql` | Estrutura do banco e views |
-| `dashboard_visao_geral.png` | Print da página Visão Geral |
 
 ## Próximas etapas
 
