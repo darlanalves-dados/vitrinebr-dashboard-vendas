@@ -8,7 +8,8 @@ Projeto de portfólio que simula as vendas de um varejo com canais online e loja
 
 ## Página 2: Análise de Devoluções
 
-![Dashboard VitrineBR - Devoluções](dashboard_devolucoes.png)
+<img width="609" height="634" alt="image" src="https://github.com/user-attachments/assets/bc6f8175-b1e2-4d63-8047-fb9961f71525" />
+
 
 ## Tecnologias
 
