@@ -88,6 +88,6 @@ Os dados são fictícios, criados apenas para fins de estudo. Os resultados ilus
 
 ## Autor
 
-**Darlan Alves da Silva**
-Analista de Logística | Power BI, SQL, DAX e Python
+**Darlan Alves da Silva**<br>
+Analista de Logística | Power BI, SQL, DAX e Python<br>
 [LinkedIn](https://www.linkedin.com/in/darlan-alves-logistica-dados)
