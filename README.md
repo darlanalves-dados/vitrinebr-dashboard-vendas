@@ -1,25 +1,36 @@
 # VitrineBR | Dashboard de Vendas
 
-Projeto de portfólio que simula as vendas de um varejo com canais online e loja física. O objetivo é mostrar o fluxo completo de análise: do banco de dados até o painel de indicadores, incluindo uma previsão de vendas.
+Projeto de portfólio que simula as vendas de um varejo com canais online e loja física. O objetivo é mostrar o fluxo completo de análise: do banco de dados até o painel de indicadores, com previsão de vendas e análise estatística de devoluções.
 
-<img width="1008" height="738" alt="image" src="https://github.com/user-attachments/assets/0db555a7-3769-4b5a-93c3-b4ec1d39a69b" />
+## Página 1: Visão Geral
 
+![Dashboard VitrineBR - Visão Geral](dashboard_visao_geral.png)
+
+## Página 2: Análise de Devoluções
+
+![Dashboard VitrineBR - Devoluções](dashboard_devolucoes.png)
 
 ## Tecnologias
 
 - **SQL Server**: banco de dados e consultas de análise
 - **Power BI**: construção do dashboard
-- **DAX**: medidas, inteligência de tempo e insights automáticos
-- **HTML e CSS**: painéis personalizados, gerados por medidas DAX e exibidos no visual HTML Content
+- **DAX**: medidas, inteligência de tempo, testes estatísticos e textos automáticos
+- **HTML, CSS e SVG**: painéis e gráficos personalizados, gerados por medidas DAX e exibidos no visual HTML Content
 - **Python** (pandas, pyodbc, scikit-learn): leitura do banco e previsão de vendas
 
 ## O que o dashboard responde
 
+**Visão Geral**
 - Qual o tamanho do negócio? Faturamento, ticket médio e volume de vendas
 - Estamos crescendo? Evolução dos últimos 12 meses, com média e mês de pico
 - O que esperar? Previsão do próximo trimestre
 - Onde vendemos mais? Ranking por região e por categoria
-- O que merece atenção? Insights gerados automaticamente a partir dos dados
+
+**Devoluções**
+- A taxa de devolução está estável? Carta de controle de 24 meses
+- Por que os pedidos voltam? Pareto dos motivos
+- As diferenças entre categorias e regiões são reais? Teste de proporção
+- O que fazer? Conclusões geradas a partir dos testes
 
 ## Previsão de vendas
 
@@ -35,30 +46,39 @@ Para medir a qualidade do modelo, os três últimos meses da base foram escondid
 
 Erro médio de 7,1%. O modelo acerta bem os meses de pico, que seguem um padrão sazonal claro, e erra mais em outubro de 2025, que ficou acima do padrão do ano anterior.
 
+## Análise estatística das devoluções
+
+Um ranking mostra quem está na frente, mas não diz se a diferença é real ou apenas variação aleatória. A página de devoluções usa três técnicas para separar uma coisa da outra.
+
+| Técnica | Para que serve | Resultado |
+|---|---|---|
+| Carta de controle (carta p) | Verificar se a taxa mensal está estável | Nenhum mês fora dos limites de controle |
+| Pareto | Encontrar os motivos que concentram o problema | 4 de 5 motivos somam 80% das devoluções |
+| Teste de proporção (z, 95%) | Checar se um grupo difere da média geral | Só Vestuário está acima da média com significância |
+
+O ponto mais interessante: o Centro-Oeste lidera o ranking de regiões, com 5,7% contra 4,8% da média, mas tem poucos pedidos e a diferença não passa no teste. Sem estatística, a conclusão seria uma ação regional desnecessária. Com ela, a prioridade fica clara: a categoria Vestuário.
+
 ## Destaques técnicos
 
 - Todos os painéis são medidas DAX que montam HTML dinamicamente
-- Gráfico de colunas construído em HTML, com linha de média e barras de previsão
-- Painel de insights com frases que se atualizam conforme os dados
-- Comparação com o mês anterior baseada no último mês fechado
+- Gráfico de linha e Pareto desenhados em SVG, dentro do Power BI
+- Limites de controle e z-scores calculados em DAX
+- Textos de insights e conclusões que se atualizam conforme os dados
 - Integração Python, SQL Server e Power BI: o modelo grava no banco e o dashboard lê
 
 ## Arquivos
 
 | Arquivo | Conteúdo |
 |---|---|
-| `medidas_dax.md` | Todas as medidas DAX do projeto |
+| `medidas_dax.md` | Todas as medidas DAX das duas páginas |
 | `01_ler_dados.py` | Leitura do faturamento mensal no SQL Server |
 | `02_previsao.py` | Modelo de previsão, teste e gravação no banco |
-
-## Próximas etapas
-
-- Página de análise de devoluções
-- Página de produtos e canais
+| `dashboard_visao_geral.png` | Print da página Visão Geral |
+| `dashboard_devolucoes.png` | Print da página Devoluções |
 
 ## Observação
 
-Os dados são fictícios, criados apenas para fins de estudo.
+Os dados são fictícios, criados apenas para fins de estudo. Os resultados ilustram o método, e não um negócio real.
 
 ## Autor
 
